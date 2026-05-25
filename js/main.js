@@ -12,15 +12,15 @@ let interval = setInterval (() => {
 // Lancement des compteurs 
 window.onload = function () {
 
-    startCounter("count1", 500);
-    startCounter("count2", 500);
-    startCounter("count3", 500);
-    startCounter("count4", 500);
-    startCounter("count5", 500);
-    startCounter("count6", 500);
+    startCounter("count1", 150);
+    startCounter("count2", 6);
+    startCounter("count3", 50);
+    startCounter("count4", 20);
+    startCounter("count5", 200);
+    startCounter("count6", 15);
     startCounter("count7", +2500);
     startCounter("count8", +800);
-    startCounter("count9", 500);
+    startCounter("count9", 50);
     startCounter("count10", +1200);
 };
 
@@ -116,4 +116,26 @@ bouton.addEventListener("click", function(e){
 
     }
 
+});
+
+/* Etoile */
+const button = document.getElementById("theme-toggle");
+const body = document.body;
+
+body.classList.add("light");
+
+button.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if(body.classList.contains("dark")){
+        body.classList.remove("light");
+
+        button.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    }
+
+    else{
+        body.classList.add("light");
+        
+        button.innerHTML = '<i class="bi bi-moon-fill"></i>'
+    }
 });
