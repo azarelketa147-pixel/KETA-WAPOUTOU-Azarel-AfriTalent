@@ -139,3 +139,19 @@ button.addEventListener("click", () => {
         button.innerHTML = '<i class="bi bi-moon-fill"></i>'
     }
 });
+/* Freelance */
+function filterCards(category){
+     
+    let cards = document.querySelectorAll(".card-item");
+
+    cards.forEach(card => {
+        if(category === "all" || card.dataset.category === category){
+
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+});
+}
+

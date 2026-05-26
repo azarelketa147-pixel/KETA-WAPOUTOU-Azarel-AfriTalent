@@ -8,7 +8,6 @@
     --white: #ffffff;
     --dark: #222222;
 }
-
 body {
     margin: 0;
     font-family: var(--font-main);
@@ -29,19 +28,88 @@ body.dark{
     border-radius: 10px;
     color: yellow;
 }
-.navbar-brand {
-    color: #1e90ff;
-} 
-.navbar-brand1 {
-     color: #1e90ff;
-     margin-left: 40px;
-} 
-.nav-link {
-    color: #667eea;
-    font-size: initial;
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
-.nav-1 {
-    border-radius: 40px;
+.navbar-brand{
+    font-size: 28px;
+    font-weight: bold;
+    color: #0d6efd;
+}
+.nav-link:hover{
+    color: #250dfd;
+    background-color: transparent;
+}
+.nav-link{
+    border: 2px solid #0d6efd;
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
+    transition : 0.3s;
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+/*======= DESKTOP =======*/
+@media (min-width: 1200px){
+    .navbar-nav{
+        gap: 15px;
+    }
+    .nav-link{
+        font-size: 18px;
+        padding: 10px 18px;
+    }
+}
+/*===== TABLETTE =====*/
+@media (max-width: 768px){
+    .navbar-nav{
+        text-align: center;
+        margin-top: 15px;
+    }
+    .nav-item{
+        margin: 10px 0;
+    }
+    .navbar-collapse{
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .nav-link{
+        display: block;
+        font-size: 17px;
+    }
+}
+/*===== MOBILE =====*/
+@media (max-width: 375px){
+    .navbar{
+        padding: 10px;
+    }
+    .navbar-brand{
+        font-size: 20px;
+    }
+    .navbar-nav{
+        text-align: center;
+    }
+    .nav-item{
+        margin: 8px 0;
+    }
+    .nav-link{
+        display: block;
+        font-size: 15px;
+        padding: 10px;
+    }
+    .navbar-collapse{
+        background: white;
+        padding: 12px;
+        border-radius: 10px;
+    }
 }
 button {
     background-color: var(--dark);
@@ -58,6 +126,21 @@ button:hover {
     color: red;
     transition: 0.8s;            
 }
+/* Bouton retour */
+.Boutons {
+    height: 50px;
+    width: 50px;
+    background-color: crimson;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
 
 /*=== SECTIONS TEMOIGNAGES ET TARIFS ===*/
 .section-container {
@@ -80,11 +163,14 @@ button:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px rgba(108,92,231,0.5);
 }
-.avatar {
+.card img{
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
+ 
+    margin-left: auto;
+    margin-right: auto;
 }
 .card h1 {
     font-size: 25px;
@@ -101,7 +187,6 @@ button:hover {
     color: gold;
     font-size: 1.2rem;
 }
-
 /* Section hero */
 .text {
     color: #ffffff;
@@ -147,12 +232,10 @@ button:hover {
     border-radius: 20px 20px 0 0;
     flex-wrap: nowrap;    
 }
-
 .start-card {
     text-align: center;
     flex: 1;   
 }
-
 .counter {
     font-size: 40px;
     font-weight: 500;
@@ -176,7 +259,6 @@ button:hover {
     font-size: 25px;
     color: #ffffff;
 }
-
 .services-container {
     color: deepskyblue;
     justify-content: center;
@@ -189,7 +271,7 @@ button:hover {
     background-color: #0f0a1a;
     margin-top: 20px;
 }
-  .service-card {
+.service-card {
     border-radius: 20px;
     width: 200px;
     max-width: 350px;
@@ -203,20 +285,19 @@ button:hover {
     text-align: center;
     padding: 10px 20px;
 }
-
 .service-card:hover{
     transform: translateY(-10px);
     box-shadow: 0 20px 40px black;
-}
-.card-icon {
-    margin-bottom: 20px;
-    display: inline-block;
 }
 .icon-3 {
     width: 48px;
     height: 48px;
     border-radius: 12px;
     margin: 0 auto;
+}
+.card-icon i{
+    font-size: 40px;
+    color: rgb(150, 7, 74);
 }
 .icon-1::before {
     color: #ffffff;
@@ -248,6 +329,7 @@ button:hover {
 .pp {
     text-align: center;
     margin-top: 10px;
+    font-family: "Orbitron", sans-serif;
 }
 .propos {
     color: #ffffff;
@@ -255,8 +337,8 @@ button:hover {
 .propos p{
     text-align: center;
     font-size: 30px;
+    font-family: "Orbitron", sans-serif;
 }
-
 /*Responsive Design */
 @media (max-width: 768px) {
     .service-container {
@@ -294,6 +376,9 @@ button:hover {
 .footer-b p {
     margin-left: 20px;
     
+}
+.footer-b h4{
+    font-family: "inter";
 }
 .footer-b h1 {
     font-size: 22px;
@@ -340,6 +425,7 @@ button:hover {
     align-items: center;
     height: auto;
     gap: 20px;
+    background-color: rgb(31, 5, 52);
 }
 option {
     color: red;
@@ -347,7 +433,6 @@ option {
 .error {
     color: red;
 }
-
 .form-box,
 .info-box {
     width: 400px;
@@ -357,14 +442,12 @@ option {
     border: 2px solid rgba(255,255,255,0.5);
     box-shadow: 0 0 20px cyan;
 }
-
 .form-box h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     margin-left: 20px;
     color: #1e90ff;
 }
-
 input,
 select,
 textarea {
@@ -377,7 +460,6 @@ textarea {
     background: rgba(255,255,255,0.1);
     color: #ffffff;
 }
-
 input:focus,
 select:focus,
 textarea:focus {
@@ -389,22 +471,18 @@ textarea:focus {
     transform: scale(1.02);
     transition: 3s;
 }
-
 input:focus::placeholder,
 textarea:focus::placeholder {
     color: green;
 }
-
 textarea {
     height: 50px;
     resize: none;
 }
-
 .row {
     display: flex;
     gap: 10px;
 }
-
 .btn-9 {
     width: 100%;
     border: none;
@@ -415,30 +493,25 @@ textarea {
     cursor: pointer;
     transition: 0.4s;
 }
-
 .btn-9:hover {
     transform: scale(1.05);
 }
-
 .success {
     margin-top: 10px;
     color: lawngreen;
     margin-left: 19%;
 }
-
 .info-box p,
 .info-box h1 {
     margin: 10px 0;
     color: var(--white);
 }
-
 iframe {
     width: 390px;
     height: 250px;
     border-radius: 10px;
     margin-top: 40px;
 }
-
 /*=========TARIFS========*/
 .tarifs {
     background-color: #0c090f;
@@ -468,8 +541,7 @@ h5 {
     color: white;
     padding: 5px 10px;
     font-size: 12px;
-    border-radius: 70px;
-    
+    border-radius: 70px;   
 }
 .price {
     font-size: 22px;
@@ -552,9 +624,13 @@ li {
     position: relative;
     z-index: 2;
 }
+.shadow p{
+    font-family: "Advent Pro", sans-serif;
+}
 .shadow h6{
     font-size: 80px;
     color: var(--primary-color);
+    font-family: "inter";
 }
 .shadow p{
     margin: 20px 0;
@@ -568,7 +644,6 @@ li {
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-size: 25px;
 }
-
 .heros {
     display: flex;
     align-items: center;
@@ -581,14 +656,17 @@ h6 {
     font-size: 40px;
     color: #1e90ff;
     margin-top: 20px;
+    font-family: "inter";
 }
-.heros-text p, cta, h2, p {
+.heros-text  cta, h2, p {
     color: #ffffff;
 }
-.heros-text h1 {
-    color: rgb(78, 7, 78);
+.heros-text p{
+    font-family: "Nunito";
+    font-size: 20px;
 }
 .heros-text h2, h3 {
+    font-family: "Poppins";
     font-size: 40px;
     color: aliceblue;
 }
@@ -605,10 +683,11 @@ h6 {
     padding: 50px;
     text-align: center;
 }
-.team h1{
+.team h1, h2{
    font-size: 40px;
    color: dodgerblue;
    margin-bottom: 50px;
+   font-family: "inter";
 }
 .teams {
     display: grid;
@@ -635,6 +714,7 @@ h6 {
     font-size: 40px;
     color: #1e90ff;
     margin-bottom: 40px;
+    font-family: "inter";
 }
 .valeur-grid {
     display: grid;
@@ -677,19 +757,66 @@ h6 {
 .span {
     color: white;
 }
-/*==== Freelances ====*/
+/*==== Freelance ====*/
+.sections-container{
+    gap: 30px;
+    padding: 60px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 .mb-4 {
-    color: #610cb7;
+    color:  #f8fafc;
     text-align: center;
 }
+.cardes{
+    background: #111;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    width: 300px;
+}
 .card-img-top {
-    width: 200px;
-    height: 150px; 
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+}
+.card-body{
+    padding: 20px;
+    text-align: center;
+    line-height: 1;
+}
+.card-body h1{
+    font-size: 15px;
+    color: white
 }
 #count {
   color: white;
   font-size: 40px;
 }
-
+/* Bouton principal */
+.btn-primary{
+    background-color: black;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+}
+.btn-primary:hover{
+    background-color:#5a159f;
+}
+.btn-outline-primary{
+    color:#f8fafc;
+    border:2px solid #000000;
+    padding:10px 20px;
+    border-radius:20px;
+    background-color: transparent;
+}
+.btn-outline-primary:hover{
+    background-color:#610cb7;
+    color:white;
+}
+.freelance-page {
+    background: linear-gradient(135deg, #1a0033, #0f172a);
+}
 
 
